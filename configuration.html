@@ -7,9 +7,9 @@
     </head>
     <body>
         <h1>Watchapp Configuration</h1>
-
+a
         <script id="hb-template" type="text/x-handlebars-template">
-a <p><a href="https://accounts.google.com/o/oauth2/auth?response_type=code&access_type=offline&prompt=consent%20select_account&client_id={{GOOGLE_CLIENT_ID}}&redirect_uri={{CATCHAUTH_URL}}&scope={{SCOPE}}">
+b <p><a href="https://accounts.google.com/o/oauth2/auth?response_type=code&access_type=offline&prompt=consent%20select_account&client_id={{GOOGLE_CLIENT_ID}}&redirect_uri={{CATCHAUTH_URL}}&scope={{SCOPE}}">
     Give Watchapp access to your Google Calendar
 </a></p>
         {{#if code}}<p>Google Calendar is setup.</p>{{/if}}
