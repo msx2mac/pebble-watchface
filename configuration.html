@@ -40,9 +40,11 @@ b <p><a href="https://accounts.google.com/o/oauth2/auth?response_type=code&acces
 alert('start');
             var json = window.location.hash;
             if (json) {
+alert('json:' + json);
                 json = json.substring(1);
             }
             else {
+alert('json:none');
                 json = "{}";
             }
 
