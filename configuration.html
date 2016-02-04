@@ -8,10 +8,9 @@
     <body>
         <h1>Watchapp Configuration</h1>
 
+        <script id="hb-template" type="text/x-handlebars-template">
 client_id:{{GOOGLE_CLIENT_ID}}<br>
 secret:{{GOOGLE_CLIENT_SECRET}}<br>
-
-        <script id="hb-template" type="text/x-handlebars-template">
         {{#if code}}<p>Google Calendar is setup.</p>{{/if}}
         {{#if code_error}}<p style="color: red">{{code_error}}</p>{{/if}}
 
