@@ -46,9 +46,13 @@ alert('start');
                 json = "{}";
             }
 
+alert('step1');
             var conf = JSON.parse(json);
+alert('step2');
             var source = $("#hb-template").html();
+alert('step3');
             var template = Handlebars.compile(source);
+alert('step4');
             
             conf.CONFIG_URL = "https://msx2mac.github.io/pebble-watchface/configuration.html#"
             conf.CATCHAUTH_URL = "https://msx2mac.github.io/pebble-watchface/catchauth.html";
