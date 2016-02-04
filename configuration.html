@@ -36,7 +36,6 @@ secret:{{GOOGLE_CLIENT_SECRET}}<br>
         </script>
 
         <script type="text/javascript">
-console.log("client_id:" + GOOGLE_CLIENT_ID);
             var json = window.location.hash;
             if (json) {
                 json = decodeURIComponent(json.substring(1));
@@ -48,10 +47,8 @@ console.log("client_id:" + GOOGLE_CLIENT_ID);
             var conf = JSON.parse(json);
             var source = $("#hb-template").html();
             var template = Handlebars.compile(source);
+console.log("client_id:" + conf.GOOGLE_CLIENT_ID);
             
-            conf.CONFIG_URL = "https://msx2mac.github.io/pebble-watchface/configuration.html#"
-            conf.CATCHAUTH_URL = "https://msx2mac.github.io/pebble-watchface/catchauth.html";
-
             $('body').append(template(conf));
 
             $('#clear-code').on('click', function() {
