@@ -7,11 +7,8 @@
     </head>
     <body>
         <h1>Watchapp Configuration</h1>
-a
+
         <script id="hb-template" type="text/x-handlebars-template">
-b <p><a href="https://accounts.google.com/o/oauth2/auth?response_type=code&access_type=offline&prompt=consent%20select_account&client_id={{GOOGLE_CLIENT_ID}}&redirect_uri={{CATCHAUTH_URL}}&scope={{SCOPE}}">
-    Give Watchapp access to your Google Calendar
-</a></p>
         {{#if code}}<p>Google Calendar is setup.</p>{{/if}}
         {{#if code_error}}<p style="color: red">{{code_error}}</p>{{/if}}
 
@@ -37,24 +34,17 @@ b <p><a href="https://accounts.google.com/o/oauth2/auth?response_type=code&acces
         </script>
 
         <script type="text/javascript">
-alert('start');
             var json = window.location.hash;
             if (json) {
-alert('json:' + decodeURIComponent(json));
                 json = decodeURIComponent(json.substring(1));
             }
             else {
-alert('json:none');
                 json = "{}";
             }
 
-alert('step1');
             var conf = JSON.parse(json);
-alert('step2');
             var source = $("#hb-template").html();
-alert('step3');
             var template = Handlebars.compile(source);
-alert('step4');
             
             conf.CONFIG_URL = "https://msx2mac.github.io/pebble-watchface/configuration.html#"
             conf.CATCHAUTH_URL = "https://msx2mac.github.io/pebble-watchface/catchauth.html";
